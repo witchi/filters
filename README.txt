@@ -3,15 +3,15 @@
  *
  * Plugin that adds a new tab to the settings section to create client-side e-mail filtering.
  *
- * @version 2.1.2
+ * @version 2.1.4
  * @author Roberto Zarrelli <zarrelli@unimol.it>
- *  
+ * @developer Artur Petrov <admin@gtn18.ru>
  */
 
 
 To install the plugin you have to: 
 1. copy the filters folder in the plugins folder of roundcube;
-2. add "filters" in the plugins section of the roundcube configuration (config/main.inc.php). 
+2. add "filters" in the plugins section of the roundcube configuration (config/config.inc.php). 
 
 To setup the plugin, open the filters.php file and edit the following variables:
   $this->autoAddSpamFilterRule = TRUE;  // if TRUE a spam filter rule is created for all users which automatically move messages into junk folder  
@@ -53,5 +53,15 @@ History
 2.1.1:
   - Fixed a bug which prevented to insert case sensitive search strings - thanks to Emanuele Bruno.
 2.1.2:
-  - Added a dynamic vertical scrollbar when there are a lot of filters to show - thanks to Alain Martini.      
-             
+  - Added a dynamic vertical scrollbar when there are a lot of filters to show - thanks to Alain Martini.
+2.1.3:
+  - Now check mail only in INBOX like yandex.mail or gmail;
+  - fix "refresh" mailboxes after move mails;
+  - Fixed a bug with the conflict rules. Add priority checkbox, now first rules with priority are working.
+2.1.4:
+  - Fixed for compare strings (Tested in all russian charset);
+  - Fixed option: all, read and unread messages;
+  - Added a new option: mark read or mark unread messages;
+  - Fully replaced a search algorithm;
+  - Fixed localization for 'folder' and 'folder.subfolder' - thanks to twisterbr.
+  

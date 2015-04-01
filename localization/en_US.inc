@@ -11,6 +11,7 @@ $labels['to'] = 'To';
 $labels['cc'] = 'CC';
 $labels['subject'] = 'Subject';
 $labels['delete'] = 'Delete';
+$labels['filterpriority'] = 'Do not apply other rules';
 
 $messages = array();
 $messages['nosearchstring'] = "The field 'Contains' cannot be empty.";

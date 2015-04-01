@@ -7,10 +7,11 @@ $labels['whatfilter'] = 'Фильтр';
 $labels['searchstring'] = 'Содержит';
 $labels['moveto'] = 'Переместить';
 $labels['from'] = 'От';
-$labels['to'] = 'То';
+$labels['to'] = 'Кому';
 $labels['cc'] = 'Копия';
 $labels['subject'] = 'Тема';
 $labels['delete'] = 'Удалить';
+$labels['filterpriority'] = 'Не применять другие правила';
 
 $messages = array();
 $messages['nosearchstring'] = "Поле 'Содержит' не может быть пустым.";
