@@ -420,7 +420,7 @@ class filters extends rcube_plugin{
       // check if the rule is already enabled
       $found = false;
       foreach ($arr_prefs as $key => $saved_filter){
-        if ($saved_filter['searchstring'] == $searchstring && $saved_filter['destfolder'] == $destfolder && $saved_filter['whatfilter'] == $whatfilter && $saved_filter['messages'] == $messages){
+        if ($saved_filter['searchstring'] == $searchstring && $saved_filter['whatfilter'] == $whatfilter){
           $found = true;
         }
       }
