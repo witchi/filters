@@ -9,9 +9,17 @@
  */
 
 
-To install the plugin you have to: 
-1. copy the filters folder in the plugins folder of roundcube;
-2. add "filters" in the plugins section of the roundcube configuration (config/config.inc.php). 
+To install the plugin you have to:
+1. Download zip-archive to Roundcube/plugins folder;
+2. Unzip downloaded zip-archive;
+3. Rename unziped folder to 'filters';
+4. Add "filters" in the plugins section of the roundcube configuration (config/config.inc.php).
+For example:
+$config['plugins'] = array(
+ 'archive',
+ 'password',
+ 'filters',
+);
 
 To setup the plugin, open the filters.php file and edit the following variables:
   $this->autoAddSpamFilterRule = TRUE;  // if TRUE a spam filter rule is created for all users which automatically move messages into junk folder  
