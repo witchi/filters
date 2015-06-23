@@ -77,7 +77,7 @@ class filters extends rcube_plugin{
 	}
 
     // if there aren't filters return
-    if(!count($arr_prefs) || !count(searchstring) || !isset($mlist['messages']) || !is_array($mlist['messages']))
+    if(!count($arr_prefs) || !count($this->searchstring) || !isset($mlist['messages']) || !is_array($mlist['messages']))
       return;
 
     // scan the messages
