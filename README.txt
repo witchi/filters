@@ -71,5 +71,6 @@ History
   - Fixed option: all, read and unread messages;
   - Added a new option: mark read or mark unread messages;
   - Fully replaced a search algorithm;
-  - Fixed localization for 'folder' and 'folder.subfolder' - thanks to twisterbr.
-  
+  - Fixed localization for 'folder' and 'folder.subfolder' - thanks to twisterbr;
+  - Added additional translations: Japanese - thanks to tatsuyaueda.
+
