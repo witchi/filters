@@ -22,6 +22,6 @@ $messages['unsuccessfullydeleted'] = "Ошибка: правило не удал
 $messages['msg_if_field'] = 'Если поле';
 $messages['msg_contains'] = 'Содержит';
 $messages['msg_move_msg_in'] = 'Переместить сообщение в';
-$messages['msg_no_stored_filters'] = "Имеются не сохраненные правила.";
+$messages['msg_no_stored_filters'] = "Правила не созданы, нет сохраненных правил.";
 
 ?>
