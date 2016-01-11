@@ -19,6 +19,6 @@ $messages['successfullydeleted'] = "Το φίλτρο διαγράφτηκε.";
 $messages['unsuccessfullydeleted'] = "Σφάλμα: το φίλτρο δεν διαγράφτηκε.";
 $messages['msg_if_field'] = 'Εάν το πεδίο';
 $messages['msg_contains'] = 'Περιέχει';
-$messages['msg_move_msg_in'] = 'μετακίνησε το μύνημα σε';
+$messages['msg_move_msg_in'] = 'μετακίνησε το μήνυμα σε';
 $messages['msg_no_stored_filters'] = "Δεν υπάρχουν αποθηκεύμενα φίλτρα.";
 ?>
