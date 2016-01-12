@@ -26,7 +26,7 @@ To setup the plugin, open the config.inc.php file and edit the following variabl
   $config['autoAddSpamFilterRule'] = TRUE;  // if TRUE a spam filter rule is created for all users which automatically move messages into junk folder  
   $config['spam_subject'] = '[SPAM]';       // How to mark the spam in the subject? To have effect the previous variable must be TRUE.
   $config['caseInsensitiveSearch'] = TRUE;  // if TRUE filters searching in case insensitive mode.
-  $config['decodeBase64Msg'] = FALSE;        // if TRUE decodes base64 mail messages. WORNING: NOT WORKING YET!
+  $config['decodeBase64Msg'] = TRUE;        // if TRUE decodes base64 mail messages. Please test this!
 
 
 History
@@ -75,4 +75,4 @@ History
   - Fixed localization for 'folder' and 'folder.subfolder' - thanks to twisterbr;
   - Added additional translations: Japanese - thanks to tatsuyaueda.
   - Added config.inc.php
-  - Fix "decode and search BASE64 messages". Please testing this!
+  - Fix "decode and search BASE64 messages". Please test this!
