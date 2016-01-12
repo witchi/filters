@@ -367,9 +367,6 @@ class filters extends rcube_plugin{
     $decode_msg	= $this->imap_mime_header_decode_fix($msg);
     $stringToSearch=stripslashes($stringToSearch);
 
-    $decode_msg = addslashes($decode_msg);
-    $stringToSearch = addslashes($stringToSearch);
-
     if ($ciSearch){
       if (function_exists('mb_stripos')){
         $tmp = mb_stripos($decode_msg, $stringToSearch);
@@ -394,8 +391,8 @@ class filters extends rcube_plugin{
     else{
       if ($this->decodeBase64Msg === TRUE){
         // decode and search BASE64 msg
-        $decoded_msg = $this->imap_mime_header_decode_fix(base64_decode($msg));
-        if ($decoded_msg !== FALSE){
+        $decode_msg = $this->imap_mime_header_decode_fix(base64_decode($msg));
+        if ($decode_msg !== FALSE){
 
           if ($ciSearch){
             if (function_exists('mb_stripos')){
