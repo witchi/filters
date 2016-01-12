@@ -390,27 +390,36 @@ class filters extends rcube_plugin{
     if ($tmp !== FALSE){
       $ret = TRUE;
     }
-/*
+
     else{
       if ($this->decodeBase64Msg === TRUE){
         // decode and search BASE64 msg
-        $decoded_str = $this->imap_mime_header_decode_fix(base64_decode($msg));
-        if ($decoded_str !== FALSE){
+        $decoded_msg = $this->imap_mime_header_decode_fix(base64_decode($msg));
+        if ($decoded_msg !== FALSE){
 
           if ($ciSearch){
-            $tmp = stripos($decoded_str, $stringToSearch, 0, 'utf8');
-		}
+            if (function_exists('mb_stripos')){
+              $tmp = mb_stripos($decode_msg, $stringToSearch);
+            }
+            else{
+              $tmp = stripos($decode_msg, $stringToSearch);
+            }
+          }
           else{
-            $tmp = strpos($decoded_str, $stringToSearch, 0, 'utf8');
-		  }
-
+            if (function_exists('mb_strpos')){
+              $tmp = mb_strpos($decode_msg, $stringToSearch);
+            }
+            else{
+              $tmp = strpos($decode_msg, $stringToSearch);
+            }
+          }
           if ($tmp !== FALSE){
             $ret = TRUE;
           }
         }
       }
     }
-*/
+
     return $ret;
   }
 
