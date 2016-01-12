@@ -75,3 +75,4 @@ History
   - Fixed localization for 'folder' and 'folder.subfolder' - thanks to twisterbr;
   - Added additional translations: Japanese - thanks to tatsuyaueda.
   - Added config.inc.php
+  - Fix "decode and search BASE64 messages". Please testing this!
