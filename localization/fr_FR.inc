@@ -11,11 +11,12 @@ $labels['to'] = 'Pour';
 $labels['cc'] = 'Copie à';
 $labels['subject'] = 'Sujet';
 $labels['delete'] = 'Supprimer';
+$labels['filterpriority'] = 'Ne pas appliquer les autres règles de filtrage';
 
 $messages = array();
 $messages['nosearchstring'] = "Le champ 'Contient' ne peut pas être vide.";
 $messages['successfullysaved'] = "Filtre enregistré avec succés.";
-$messages['unsuccessfullysaved'] = "Erreur: filtre non sauvegarder.";
+$messages['unsuccessfullysaved'] = "Erreur: filtre non sauvegardé.";
 $messages['successfullydeleted'] = "Filtre supprimé avec succés.";
 $messages['unsuccessfullydeleted'] = "Erreur: filtre non supprimé.";
 $messages['msg_if_field'] = 'Si le champ';
