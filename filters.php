@@ -237,26 +237,27 @@ class filters extends rcube_plugin{
     $i = 1;
     $flag=false;
     $table2 = new html_table(array('cols' => 2));
-    foreach ($arr_prefs['filters'] as $key => $saved_filter){
-      $flag=true;
-      if (empty($saved_filter['markread'])) $saved_filter['markread'] = 'none';
-      $folder_id = $saved_filter['destfolder'];
-      $folder_name = rcmail_localize_folderpath($folder_id);
-      $messages = $saved_filter['messages'];
+    if (isset($arr_prefs['filters']))
+      foreach ($arr_prefs['filters'] as $key => $saved_filter){
+        $flag=true;
+        if (empty($saved_filter['markread'])) $saved_filter['markread'] = 'none';
+        $folder_id = $saved_filter['destfolder'];
+        $folder_name = rcmail_localize_folderpath($folder_id);
+        $messages = $saved_filter['messages'];
 
-      $msg = $i." - ".$this->gettext('msg_if_field')." <b>".$this->gettext($saved_filter['whatfilter'])."</b> ".$this->gettext('msg_contains').
-	    " <b>".stripslashes($saved_filter['searchstring'])."</b> ".
-	    $this->gettext('msg_move_msg_in')." <b>".$folder_name."</b> ".
-		"(".$this->gettext('messagecount').": ".$this->gettext($saved_filter['messages']).
-		", ".$this->gettext('mark').": ".$this->gettext($saved_filter['markread']).")";
-      if ( !empty($saved_filter['filterpriority']))
-	    $msg = "<font color='green'>".$msg."</font>";
+        $msg = $i." - ".$this->gettext('msg_if_field')." <b>".$this->gettext($saved_filter['whatfilter'])."</b> ".$this->gettext('msg_contains').
+	      " <b>".stripslashes($saved_filter['searchstring'])."</b> ".
+	      $this->gettext('msg_move_msg_in')." <b>".$folder_name."</b> ".
+		  "(".$this->gettext('messagecount').": ".$this->gettext($saved_filter['messages']).
+		  ", ".$this->gettext('mark').": ".$this->gettext($saved_filter['markread']).")";
+        if ( !empty($saved_filter['filterpriority']))
+	      $msg = "<font color='green'>".$msg."</font>";
 
-      $table2->add('title',$msg);
-      $dlink = "<a href='./?_task=settings&_action=plugin.filters-delete&filterid=".$key."'>".$this->gettext('delete')."</a>";
-      $table2->add('title',$dlink);
-      $i++;
-    }
+        $table2->add('title',$msg);
+        $dlink = "<a href='./?_task=settings&_action=plugin.filters-delete&filterid=".$key."'>".$this->gettext('delete')."</a>";
+        $table2->add('title',$dlink);
+        $i++;
+      }
 
     if (!$flag){
       $table2->add('title',Q($this->gettext('msg_no_stored_filters')));
