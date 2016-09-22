@@ -15,7 +15,7 @@ $labels['to'] = 'Para';
 $labels['cc'] = 'CC';
 $labels['subject'] = 'Asunto';
 $labels['delete'] = 'Eliminar';
-
+$labels['filterpriority'] = 'No aplicar otras reglas'
 $messages = array();
 $messages['nosearchstring'] = "El campo 'Contiene' no puede estar vacío.";
 $messages['successfullysaved'] = "Filtro almacenado éxitosamente.";
