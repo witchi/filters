@@ -3,6 +3,7 @@
     "type": "roundcube-plugin",
     "description": "Plugin that adds a new tab to the settings section to create client-side e-mail filtering.",
     "keywords": ["filters","client-side","rules","spam"],
+    "homepage": "https://github.com/6ec123321/filters",
     "license": "GNU GPLv3+",
     "version": "2.1.4",
     "authors": [
