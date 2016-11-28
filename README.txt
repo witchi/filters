@@ -3,7 +3,7 @@
  *
  * Plugin that adds a new tab to the settings section to create client-side e-mail filtering.
  *
- * @version 2.1.4
+ * @version 2.1.5
  * @author Roberto Zarrelli <zarrelli@unimol.it>
  * @developer Artur Petrov <admin@gtn18.ru>
  */
@@ -77,3 +77,5 @@ History
   - Added config.inc.php;
   - Fix "decode and search BASE64 messages";
   - Added additional translations: Ukrainian - thanks to Dmitro Gnatoyko (dimagnatoiko@gmail.com).
+2.1.5:
+  - Fixed for Roundcubemail 1.2.2.
