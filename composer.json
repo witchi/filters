@@ -5,7 +5,7 @@
     "keywords": ["filters","client-side","rules","spam"],
     "homepage": "https://github.com/6ec123321/filters/archive/master.zip",
     "license": "GNU GPLv3+",
-    "version": "2.1.5",
+    "version": "2.1.6",
     "authors": [
     	{
             "name": "Roberto Zarrelli",
