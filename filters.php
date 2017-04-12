@@ -140,12 +140,12 @@ class filters extends rcube_plugin{
     $this->register_handler('plugin.body', array($this, 'filters_form'));
     $this->rc->output->set_pagetitle($this->gettext('filters'));
 
-    $searchstring = trim(get_input_value('_searchstring', RCUBE_INPUT_POST, true));
-    $destfolder = trim(get_input_value('_folders', RCUBE_INPUT_POST, true));
-    $whatfilter = trim(get_input_value('_whatfilter', RCUBE_INPUT_POST, true));
-    $messages = trim(get_input_value('_messages', RCUBE_INPUT_POST, true));
-    $filterpriority = trim(get_input_value('_checkbox', RCUBE_INPUT_POST, true));
-	$markread = trim(get_input_value('_markread', RCUBE_INPUT_POST, true));
+    $searchstring = trim(rcube_utils::get_input_value('_searchstring', RCUBE_INPUT_POST, true));
+    $destfolder = trim(rcube_utils::get_input_value('_folders', RCUBE_INPUT_POST, true));
+    $whatfilter = trim(rcube_utils::get_input_value('_whatfilter', RCUBE_INPUT_POST, true));
+    $messages = trim(rcube_utils::get_input_value('_messages', RCUBE_INPUT_POST, true));
+    $filterpriority = trim(rcube_utils::get_input_value('_checkbox', RCUBE_INPUT_POST, true));
+	$markread = trim(rcube_utils::get_input_value('_markread', RCUBE_INPUT_POST, true));
 
     if ($searchstring == "")
       $this->rc->output->command('display_message', $this->gettext('nosearchstring'), 'error');
@@ -185,8 +185,8 @@ class filters extends rcube_plugin{
         $this->rc->output->command('display_message', $this->gettext('unsuccessfullydeleted'), 'error');
     }
 
-    if (function_exists('rcmail_overwrite_action'))
-      rcmail_overwrite_action('plugin.filters');
+    if (function_exists('rcmail::get_instance()->overwrite_action'))
+      rcmail::get_instance()->overwrite_action('plugin.filters');
     else $this->rc->overwrite_action('plugin.filters');
     
     $this->rc->output->send('plugin');
@@ -212,8 +212,8 @@ class filters extends rcube_plugin{
     $table->add('', $inputfield->show(""));
 
     $table->add('title', rcube_utils::rep_specialchars_output($this->gettext('moveto').":"));
-    if (function_exists('rcmail_mailbox_select'))
-      $select = rcmail_mailbox_select(array('name' => '_folders', 'id' => 'folders'));
+    if (function_exists('rcmail::get_instance()->folder_selector'))
+      $select = rcmail::get_instance()->folder_selector(array('name' => '_folders', 'id' => 'folders'));
     else $select = $this->rc->folder_selector(array('name' => '_folders', 'id' => 'folders'));
     $table->add('title',  $select->show());
 
@@ -248,8 +248,8 @@ class filters extends rcube_plugin{
       $flag=true;
       if (empty($saved_filter['markread'])) $saved_filter['markread'] = 'none';
       $folder_id = $saved_filter['destfolder'];
-      if (function_exists('rcmail_localize_folderpath'))
-        $folder_name = rcmail_localize_folderpath($folder_id);
+      if (function_exists('rcmail::get_instance()->localize_folderpath'))
+        $folder_name = rcmail::get_instance()->localize_folderpath($folder_id);
       else $folder_name = $this->rc->localize_folderpath($folder_id);
 
       $messages = $saved_filter['messages'];
