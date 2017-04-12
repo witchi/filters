@@ -79,3 +79,7 @@ History
   - Added additional translations: Ukrainian - thanks to Dmitro Gnatoyko (dimagnatoiko@gmail.com).
 2.1.5:
   - Fixed for Roundcubemail 1.2.2.
+2.1.6:
+  - Fixed for Roundcubemail 1.2.4
+  - Fixed warnings
+  - Fixed "SAVE" button in settings -> filter rules. Thx @JofO97
