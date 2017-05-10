@@ -83,3 +83,4 @@ History
   - Fixed for Roundcubemail 1.2.4
   - Fixed warnings
   - Fixed "SAVE" button in settings -> filter rules. Thx @JofO97
+  - Fixed search in Roundcube - thanks to peterkroon
