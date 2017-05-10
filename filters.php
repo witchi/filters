@@ -38,7 +38,7 @@ class filters extends rcube_plugin{
     $this->caseInsensitiveSearch = $this->rc->config->get('caseInsensitiveSearch',TRUE);
     $this->decodeBase64Msg = $this->rc->config->get('decodeBase64Msg',FALSE);
 
-    if($this->rc->task == 'mail')
+    if($this->rc->task == 'mail' && !isset($_GET["_q"]))
         $this->add_hook('messages_list', array($this, 'filters_checkmsg'));
     else if ($this->rc->task == 'settings'){
         $this->register_action('plugin.filters', array($this, 'filters_init'));
