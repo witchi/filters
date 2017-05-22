@@ -1,13 +1,14 @@
-/**
- * Filters
- *
- * Plugin that adds a new tab to the settings section to create client-side e-mail filtering.
- *
- * @version 2.1.6
- * @author Roberto Zarrelli <zarrelli@unimol.it>
- * @developer Artur Petrov <admin@gtn18.ru>
- */
+Roundcube Plugin Filters
+============================
 
+Plugin that adds a new tab to the settings section to create client-side e-mail filtering.
+
+@version 2.1.6
+@author Roberto Zarrelli <zarrelli@unimol.it>
+@developer Artur Petrov <admin@gtn18.ru>
+
+Installation
+----------------------------------------
 
 To install the plugin you have to:
 1. PHP requirements: installed imap-module (--with-imap) for working with imap_mime_header_decode() function.
@@ -16,34 +17,41 @@ To install the plugin you have to:
 4. Rename unziped folder to 'filters';
 5. Add "filters" in the plugins section of the roundcube configuration (config/config.inc.php).
 For example:
+```
 $config['plugins'] = array(
  'archive',
  'password',
  'filters',
 );
+```
+
+Configuration
+----------------------------------------
 
 To setup the plugin, open the config.inc.php file and edit the following variables:
+```
   $config['autoAddSpamFilterRule'] = TRUE;  // if TRUE a spam filter rule is created for all users which automatically move messages into junk folder  
   $config['spam_subject'] = '[SPAM]';       // How to mark the spam in the subject? To have effect the previous variable must be TRUE.
   $config['caseInsensitiveSearch'] = TRUE;  // if TRUE filters searching in case insensitive mode.
   $config['decodeBase64Msg'] = TRUE;        // if TRUE decodes base64 mail messages.
-
+```
 
 History
+----------------------------------------
 
 1.0 Initial version.
 1.1 Fixed some important issues.
-1.2 Fixed some minor issues - thanks to Marco De Vivo. 
+1.2 Fixed some minor issues - thanks to Marco De Vivo.
 1.3 Fixed some minor issues and added additional translations: Dutch and French - thanks to Ruud van den Hout.
 1.4 News: each rule can now filter all, read or unread messages.
 1.5 Fixed some important issues detected with Roundcube 0.8
-1.6 Added additional translation: German - thanks to Fynn Kardel. 
-1.7 Added additional translation: Russian - thanks to AresMax. 
+1.6 Added additional translation: German - thanks to Fynn Kardel.
+1.7 Added additional translation: Russian - thanks to AresMax.
 1.8 Added additional translation: Czech - thanks to Miroslav Baka.
-1.9 Added additional translation: Spanish - thanks to Yoni (MyRoundcube Dev Team - www.myroundcube.com). 
+1.9 Added additional translation: Spanish - thanks to Yoni (MyRoundcube Dev Team - www.myroundcube.com).
 1.9.1 Added additional translations: Polish - thanks to Damian Wrzalski; Slovak - thanks to Miki.
-1.9.2: 
-  - Added additional translation: Portugal - thanks to antoniomr. 
+1.9.2:
+  - Added additional translation: Portugal - thanks to antoniomr.
   - Fixed the UTF-8 coding on the German translation - thanks to Veit.
   - Added the contrib section with third-party scripts.
   - Thanks to Carsten Schumann to write the manual filter patch for Filters 1.9.2 which adds the option to filter manually on request (i.e. to move all newsletters/alerts from inbox to trash).
