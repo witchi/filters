@@ -39,8 +39,8 @@ To setup the plugin, open the config.inc.php file and edit the following variabl
 History
 ----------------------------------------
 
-1.0 Initial version.
-1.1 Fixed some important issues.
+  Initial version.
+    Fixed some important issues.
 1.2 Fixed some minor issues - thanks to Marco De Vivo.
 1.3 Fixed some minor issues and added additional translations: Dutch and French - thanks to Ruud van den Hout.
 1.4 News: each rule can now filter all, read or unread messages.
