@@ -140,12 +140,12 @@ class filters extends rcube_plugin{
     $this->register_handler('plugin.body', array($this, 'filters_form'));
     $this->rc->output->set_pagetitle($this->gettext('filters'));
 
-    $searchstring = trim(rcube_utils::get_input_value('_searchstring', RCUBE_INPUT_POST, true));
-    $destfolder = trim(rcube_utils::get_input_value('_folders', RCUBE_INPUT_POST, true));
-    $whatfilter = trim(rcube_utils::get_input_value('_whatfilter', RCUBE_INPUT_POST, true));
-    $messages = trim(rcube_utils::get_input_value('_messages', RCUBE_INPUT_POST, true));
-    $filterpriority = trim(rcube_utils::get_input_value('_checkbox', RCUBE_INPUT_POST, true));
-	$markread = trim(rcube_utils::get_input_value('_markread', RCUBE_INPUT_POST, true));
+    $searchstring = trim(rcube_utils::get_input_value('_searchstring', rcube_utils::INPUT_POST, true));
+    $destfolder = trim(rcube_utils::get_input_value('_folders', rcube_utils::INPUT_POST, true));
+    $whatfilter = trim(rcube_utils::get_input_value('_whatfilter', rcube_utils::INPUT_POST, true));
+    $messages = trim(rcube_utils::get_input_value('_messages', rcube_utils::INPUT_POST, true));
+    $filterpriority = trim(rcube_utils::get_input_value('_checkbox', rcube_utils::INPUT_POST, true));
+	$markread = trim(rcube_utils::get_input_value('_markread', rcube_utils::INPUT_POST, true));
 
     if ($searchstring == "")
       $this->rc->output->command('display_message', $this->gettext('nosearchstring'), 'error');
