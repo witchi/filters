@@ -52,7 +52,7 @@
 			<file name="localization/tr_TR.inc" role="data"></file>
 			<file name="localization/uk_UA.inc" role="data"></file>
 			<file name="localization/zh_TW.inc" role="data"></file>
-			<file name="README.txt" role="data"></file>
+			<file name="README.md" role="data"></file>
 			<file name="composer.json" role="data"></file>
 		</dir>
 	</contents>
