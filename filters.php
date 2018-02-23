@@ -242,35 +242,34 @@ class filters extends rcube_plugin{
     $user = $this->rc->user;
     $arr_prefs = $user->get_prefs();
     $i = 1;
-    $flag=false;
     $table2 = new html_table(array('cols' => 2));
-    foreach ($arr_prefs['filters'] as $key => $saved_filter){
-      $flag=true;
-      if (empty($saved_filter['markread'])) $saved_filter['markread'] = 'none';
-      $folder_id = $saved_filter['destfolder'];
-      if (function_exists('rcmail::get_instance()->localize_folderpath'))
-        $folder_name = rcmail::get_instance()->localize_folderpath($folder_id);
-      else $folder_name = $this->rc->localize_folderpath($folder_id);
+	 
+    if(empty($arr_prefs['filters']))
+	    $table2->add('title',rcube_utils::rep_specialchars_output($this->gettext('msg_no_stored_filters'), 'html'));
+    else {
+		foreach ($arr_prefs['filters'] as $key => $saved_filter){
+		  if (empty($saved_filter['markread'])) $saved_filter['markread'] = 'none';
+		  $folder_id = $saved_filter['destfolder'];
+		  if (function_exists('rcmail::get_instance()->localize_folderpath'))
+			$folder_name = rcmail::get_instance()->localize_folderpath($folder_id);
+		  else $folder_name = $this->rc->localize_folderpath($folder_id);
 
-      $messages = $saved_filter['messages'];
+		  $messages = $saved_filter['messages'];
 
-      $msg = $i." - ".$this->gettext('msg_if_field')." <b>".$this->gettext($saved_filter['whatfilter'])."</b> ".$this->gettext('msg_contains').
-	    " <b>".stripslashes($saved_filter['searchstring'])."</b> ".
-	    $this->gettext('msg_move_msg_in')." <b>".$folder_name."</b> ".
-		"(".$this->gettext('messagecount').": ".$this->gettext($saved_filter['messages']).
-		", ".$this->gettext('mark').": ".$this->gettext($saved_filter['markread']).")";
-      if ( !empty($saved_filter['filterpriority']))
-	    $msg = "<font color='green'>".$msg."</font>";
+		  $msg = $i." - ".$this->gettext('msg_if_field')." <b>".$this->gettext($saved_filter['whatfilter'])."</b> ".$this->gettext('msg_contains').
+			" <b>".stripslashes($saved_filter['searchstring'])."</b> ".
+			$this->gettext('msg_move_msg_in')." <b>".$folder_name."</b> ".
+			"(".$this->gettext('messagecount').": ".$this->gettext($saved_filter['messages']).
+			", ".$this->gettext('mark').": ".$this->gettext($saved_filter['markread']).")";
+		  if ( !empty($saved_filter['filterpriority']))
+			$msg = "<font color='green'>".$msg."</font>";
 
-      $table2->add('title',$msg);
-      $dlink = "<a href='./?_task=settings&_action=plugin.filters-delete&filterid=".$key."'>".$this->gettext('delete')."</a>";
-      $table2->add('title',$dlink);
-      $i++;
-    }
-
-    if (!$flag){
-      $table2->add('title',rcube_utils::rep_specialchars_output($this->gettext('msg_no_stored_filters'), 'html'));
-    }
+		  $table2->add('title',$msg);
+		  $dlink = "<a href='./?_task=settings&_action=plugin.filters-delete&filterid=".$key."'>".$this->gettext('delete')."</a>";
+		  $table2->add('title',$dlink);
+		  $i++;
+		}
+	}
 
     $out = html::div(array('class' => 'box'),
         html::div(array('id' => 'prefs-title', 'class' => 'boxtitle'), $this->gettext('filters')) .
