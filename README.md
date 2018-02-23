@@ -89,7 +89,11 @@ History
 * 2.1.5:
   - Fixed for Roundcubemail 1.2.2.
 * 2.1.6:
-  - Fixed for Roundcubemail 1.2.4
-  - Fixed warnings
-  - Fixed "SAVE" button in settings -> filter rules. Thx @JofO97
-  - Fixed search in Roundcube - thanks to peterkroon
+  - Fixed for Roundcubemail 1.2.4;
+  - Fixed warnings;
+  - Fixed "SAVE" button in settings -> filter rules. Thx @JofO97;
+  - Fixed search in Roundcube - thanks to peterkroon.
+* 2.1.7:
+  - Fixed for Roundcubemail 1.3.4;
+  - Fixed error "The fields Contains must not be empty"... but the field isn't empty when adding a filter. - thanks to derekisbusy (Merge pull request #28 from derekisbusy/master);
+  - Fixed PHP Warning: Invalid argument supplied for foreach() in /sites/www/roundcube/plugins/filters/filters.php on line 247. - thanks to BeBest123 (Merge pull request #32 from BeBest123/patch-1).
