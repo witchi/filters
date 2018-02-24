@@ -7,7 +7,7 @@
  *
  * @version 2.1.7
  * @author Roberto Zarrelli <zarrelli@unimol.it>
- * @developer Artur Petrov <admin@gtn18.ru>
+ * @developer Artur Petrov <artur@phpchain.ru>
  */
 
 class filters extends rcube_plugin{
