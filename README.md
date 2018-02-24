@@ -11,11 +11,10 @@ Installation
 ----------------------------------------
 
 To install the plugin you have to:
-1. PHP requirements: installed imap-module (--with-imap) for working with imap_mime_header_decode() function.
-2. Download zip-archive to Roundcube/plugins folder;
-3. Unzip downloaded zip-archive;
-4. Rename unziped folder to 'filters';
-5. Add "filters" in the plugins section of the roundcube configuration (config/config.inc.php).
+1. Download zip-archive to Roundcube/plugins folder;
+2. Unzip downloaded zip-archive;
+3. Rename unziped folder to 'filters';
+4. Add "filters" in the plugins section of the roundcube configuration (config/config.inc.php).
 For example:
 ```
 $config['plugins'] = array(
