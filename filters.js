@@ -11,11 +11,7 @@
 
 if (window.rcmail) {
   rcmail.addEventListener('init', function(evt) {
-    var tab = $('<span>').attr('id', 'settingstabpluginfilters').addClass('tablink');    
-    var button = $('<a>').attr('href', rcmail.env.comm_path+'&_action=plugin.filters').html(rcmail.gettext('filters', 'filters')).appendTo(tab);    
-        
-    // add button and register command
-    rcmail.add_element(tab, 'tabs');
+    // register command
     rcmail.register_command('plugin.filters-delete', function(){ rcmail.goto_url('plugin.filters-delete') }, true);    
     rcmail.register_command('plugin.filters-save', function(){ 
       var input_searchstring = rcube_find_object('_searchstring');      

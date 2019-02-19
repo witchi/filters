@@ -41,6 +41,7 @@ class filters extends rcube_plugin{
     if($this->rc->task == 'mail' && !isset($_GET["_q"]))
         $this->add_hook('messages_list', array($this, 'filters_checkmsg'));
     else if ($this->rc->task == 'settings'){
+        $this->add_hook('settings_actions', array($this, 'settings_actions'));
         $this->register_action('plugin.filters', array($this, 'filters_init'));
         $this->register_action('plugin.filters-save', array($this, 'filters_save'));
         $this->register_action('plugin.filters-delete', array($this, 'filters_delete'));
@@ -53,6 +54,17 @@ class filters extends rcube_plugin{
         $this->add_hook('login_after', array($this, 'filters_addMoveSpamRule'));
     }
 
+  }
+
+  function settings_actions($args){
+      $args['actions'][] = array(
+          'action' => 'plugin.filters',
+          'class' => 'filters',
+          'label' => 'filters',
+          'domain' => 'filters',
+      );
+
+      return $args;
   }
 
   function filters_checkmsg($mlist){
