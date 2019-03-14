@@ -5,7 +5,8 @@ $labels['filters'] = 'Фильтры';
 $labels['storedfilters'] = 'Правила';
 $labels['whatfilter'] = 'Фильтр';
 $labels['searchstring'] = 'Содержит';
-$labels['moveto'] = 'Переместить';
+$labels['movefrom'] = 'Проверять папку';
+$labels['moveto'] = 'Переместить в';
 $labels['from'] = 'От';
 $labels['to'] = 'Кому';
 $labels['cc'] = 'Копия';
@@ -22,6 +23,7 @@ $messages['unsuccessfullydeleted'] = "Ошибка: правило не удал
 $messages['msg_if_field'] = 'Если поле';
 $messages['msg_contains'] = 'Содержит';
 $messages['msg_move_msg_in'] = 'Переместить сообщение в';
+$messages['msg_move_msg_from'] = 'из';
 $messages['msg_no_stored_filters'] = "Правила не созданы, нет сохраненных правил.";
 
 ?>

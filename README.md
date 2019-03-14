@@ -3,7 +3,7 @@ Roundcube Plugin Filters
 
 Plugin that adds a new tab to the settings section to create client-side e-mail filtering.
 
-@version 2.1.7
+@version 2.1.9
 @author Roberto Zarrelli <zarrelli@unimol.it>
 @developer Artur Petrov <artur@phpchain.ru>
 
@@ -29,10 +29,11 @@ Configuration
 
 To setup the plugin, open the config.inc.php file and edit the following variables:
 ```
-  $config['autoAddSpamFilterRule'] = TRUE;  // if TRUE a spam filter rule is created for all users which automatically move messages into junk folder  
+  $config['autoAddSpamFilterRule'] = TRUE;  // if TRUE a spam filter rule is created for all users which automatically move messages into junk folder if no filters rules
   $config['spam_subject'] = '[SPAM]';       // How to mark the spam in the subject? To have effect the previous variable must be TRUE.
   $config['caseInsensitiveSearch'] = TRUE;  // if TRUE filters searching in case insensitive mode.
-  $config['decodeBase64Msg'] = TRUE;        // if TRUE decodes base64 mail messages.
+  $config['decodeBase64Msg'] = TRUE;        // if TRUE decode base64 mail messages.
+  $config['spam_headers'] = array('X-Spam-Flag','X-Spam-Status','X-Yandex-Spam'); // Check additional headers or amavisd-new headers like X-Spam-Flag, don't need mark spam in the subject
 ```
 
 History
@@ -97,4 +98,7 @@ History
   - Fixed error "The fields Contains must not be empty"... but the field isn't empty when adding a filter - thanks to derekisbusy (Merge pull request #28 from derekisbusy/master);
   - Fixed PHP Warning: Invalid argument supplied for foreach() in /sites/www/roundcube/plugins/filters/filters.php on line 247 - thanks to BeBest123 (Merge pull request #32 from BeBest123/patch-1);
   - Render settings sidebar with RC's PHP API - thanks to jfcherng (Merge pull request #38 from jfcherng/master).
-  
+* 2.1.8:
+  - Added new option for select source folder.
+* 2.1.9:
+  - Added check for additional headers from config.inc.php ($config['spam_headers']=array()).
