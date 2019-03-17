@@ -471,6 +471,7 @@ class filters extends rcube_plugin{
     $found = false;
     foreach ($arr_prefs as $key => $saved_filter){
       if ($saved_filter['searchstring'] == $searchstring && $saved_filter['whatfilter'] == $whatfilter) $found = true;
+      if ($saved_filter['searchstring'] == 'Yes' && $saved_filter['whatfilter'] == 'X-Spam-Flag') $found = true;
     }
 
     if (!$found && $destfolder !== null && $destfolder !== ""){
