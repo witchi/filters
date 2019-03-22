@@ -228,6 +228,7 @@ class filters extends rcube_plugin{
     $select->add($this->gettext('to'), 'to');
     $select->add($this->gettext('cc'), 'cc');
     $select->add($this->gettext('subject'), 'subject');
+    $select->add($this->gettext('list-post'), 'list-post');
     foreach ($this->spam_headers as $spam_header) $select->add($spam_header,$spam_header);
     $table->add('', $select->show($this->gettext('from')));
 
@@ -265,7 +266,7 @@ class filters extends rcube_plugin{
     $table->add('', $select->show($this->gettext('none')));
 
     // new option: filter priority, "on" as enable and "" as disable
-    $table->add('title', rcube_utils::rep_specialchars_output($this->gettext('filterpriority').":"), 'html');
+n    $table->add('title', rcube_utils::rep_specialchars_output($this->gettext('filterpriority').":"), 'html');
     $checkbox = new html_checkbox(array('name' => '_checkbox', 'id' => 'checkbox'));
     $table->add('', $checkbox->show("0"));
 
@@ -337,7 +338,7 @@ class filters extends rcube_plugin{
     // check if a message has been read
     if (isset($message->flags['SEEN']) && $message->flags['SEEN'])
       $msg_read = 1;
-      $headers = array_merge(array('from','to','cc','subject'), $this->spam_headers);
+      $headers = array_merge(array('from','to','cc','subject','list-post'), $this->spam_headers);
       $destination_folder = '';
       $filter_flag = '';
       $mark_flag = '';
