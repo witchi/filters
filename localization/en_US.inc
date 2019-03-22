@@ -10,6 +10,7 @@ $labels['moveto'] = 'Move to';
 $labels['from'] = 'From';
 $labels['to'] = 'To';
 $labels['cc'] = 'CC';
+$labels['list-post'] = 'Mailing list';
 $labels['subject'] = 'Subject';
 $labels['delete'] = 'Delete';
 $labels['filterpriority'] = 'Do not apply other rules';
