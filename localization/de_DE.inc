@@ -9,6 +9,7 @@ $labels['moveto'] = 'Verschieben nach';
 $labels['from'] = 'Absender';
 $labels['to'] = 'Empfänger';
 $labels['cc'] = 'CC';
+$labels['list-post'] = 'Liste';
 $labels['subject'] = 'Betreff';
 $labels['delete'] = 'Löschen';
 
